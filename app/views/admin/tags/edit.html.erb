@@ -1,0 +1,98 @@
+
+
+
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>BLOG</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+   <%= stylesheet_link_tag('backend', :media=> 'all') %>
+    <%= stylesheet_link_tag('article', :media=> 'all') %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'adarticle', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'javascripts/admin/backend', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+
+  <div class="container-fluid display-table">
+
+        <!-- side menu -->
+      <%= render "admin/side_menu"%>
+
+          <div class="col-md-10 col-sm-11 display-table-cell vertical-align">
+       <div class="row">
+
+               <header id="nav-header" class="clearfix">
+                <div class="col-md-5">
+
+                  <nav class="navbar-default pull-left">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target="side-menu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </nav>
+                 <input type="text" class="hidden-sm hidden-xs" id="header-search-field" placeholder="search for anythings..">
+                </div>
+                  <div class="col-md-7">
+                    <ul class="pull-right">
+                      <li id="welcome" class="hidden-xs">welcome to administrator area</li>
+                       <li class="fixed-width">
+                        <a href="#">
+                          <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                          <span class="label label-warning">3</span>
+                        </a>
+                      </li>
+
+                       <li class="fixed-width">
+                        <a href="#">
+                          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                          <span class="label label-message">3</span>
+                        </a>
+                      </li>
+
+                       <li>
+                        <%=link_to logout_path do %>
+                          <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                        log-out
+                        <% end %>
+                      </li>
+
+                    </ul>
+
+                  </div>
+               </header>
+           </div>
+
+
+          <h1>Admin::Tags#edit</h1>
+<%= form_for [:admin, @tag] do |f| %>
+<p>
+    <%=f.label :name %>
+</p>
+<p>
+<%=f.text_field :name %>
+</p>
+<p><%=f.submit %></p>
+
+<% end %>
+
+
+           <div class="row">
+            <footer id="admin-footer"  class="clearfix">
+              <div class="pull-left"><b>copyright </b>&copy; 2016</div>
+              <div class="pull-right">Shalo</div>
+            </footer>
+
+          </div>
+
+</div>
+
+
+<% yield %>
+
+</body>

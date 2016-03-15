@@ -1,0 +1,10 @@
+#content {
+    margin:20px 0px 50px 0px;
+    background-color: #red;
+    border-top: 4px #e7eaec solid;
+
+}
+#content header{
+    border-bottom: 1px #f3f3f4 solid;
+    padding: 10px 0px;
+}
